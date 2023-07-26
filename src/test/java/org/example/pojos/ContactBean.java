@@ -4,10 +4,18 @@ public class ContactBean {
 
     private String firstName;
     private String lastName;
-    private int officePhone;
-    private int cellPhone;
+    private String officePhone;
+    private String cellPhone;
     private String email;
 
+
+    public ContactBean(String firstName, String lastName, String officePhone, String cellPhone, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.officePhone = officePhone;
+        this.cellPhone = cellPhone;
+        this.email = email;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -24,19 +32,19 @@ public class ContactBean {
         this.lastName = lastName;
     }
 
-    public int getOfficePhone() {
+    public String getOfficePhone() {
         return officePhone;
     }
 
-    public void setOfficePhone(int officePhone) {
+    public void setOfficePhone(String officePhone) {
         this.officePhone = officePhone;
     }
 
-    public int getCellPhone() {
+    public String getCellPhone() {
         return cellPhone;
     }
 
-    public void setCellPhone(int cellPhone) {
+    public void setCellPhone(String cellPhone) {
         this.cellPhone = cellPhone;
     }
 
