@@ -1,3 +1,4 @@
+@wip
 Feature: ContactBean feature
 
   Scenario: create contact

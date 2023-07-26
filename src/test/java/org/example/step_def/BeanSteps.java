@@ -4,18 +4,32 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.example.pojos.ContactBean;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
 import java.util.List;
 
 public class BeanSteps {
 
-    public static List<ContactBean> savedContacts;
+    private static List<ContactBean> savedContacts;
     @Given("I logged into suiteCRM")
     public void i_logged_into_suite_crm() {
         // Assume you have methods for logging into suiteCRM and navigating to the contact creation page.
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
 
-        private List<ContactBean> savedContacts;
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.findElement(By.xpath("input[@name='username']")).sendKeys("Admin");
+        driver.findElement(By.xpath("input[@name='password']")).sendKeys("admin123");
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+
 
     }
 
@@ -53,4 +67,4 @@ public class BeanSteps {
     }
 
     }
-}
+
